@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+	<title>Q3 Drill 2</title>
+
+	<style>
+		body {
+			background-color: #e9e9e9;
+			font-family: monospace;
+		}
+		.box {
+			border: 2px dashed gray;
+			border-radius: 20px;
+			padding: 30px;
+			text-align: center;
+			max-width: 600px;
+			margin: auto;
+			margin-top: 50px;
+			background-color: #cfe4f7;
+		}
+		h1 {
+			background-color: #eabe89;
+			border-radius: 20px;
+			padding: 10px;
+		}
+		input:hover::placeholder {
+			color: #c45a00;
+		}
+		button:active {
+			background-color: #145c32;
+		}
+		#result kbd {
+			font-size: 35px;
+			padding: 12px 25px;
+			border-radius: 8px;
+			background: linear-gradient(to right, #c45a00, #e29b4a);
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box">
+		<h1>Basic Calculator Version 2</h1>
+
+		<details ontoggle="console.log('help opened')">
+			<summary>Instructions?</summary>
+			<p>try to put two numbers, then click display to see the total</p>
+		</details>
+
+		<br>
+
+		<input type="number" id="n1" class="form-control"
+		placeholder="input any number 0 to 100">
+
+		<br>
+
+		<input type="number" id="n2" class="form-control"
+		placeholder="input any decimal number from 0 to 100">
+
+		<br>
+
+		<button class="btn btn-success rounded-pill" onclick="showResult()">
+			Display
+		</button>
+
+		<br><br>
+
+		<p id="result"></p>
+	</div>
+
+	<script>
+		function showResult(){
+			let a = document.getElementById("n1").value;
+			let b = document.getElementById("n2").value;
+			document.getElementById("result").innerHTML =
+			"<kbd>" + (Number(a) + Number(b)) + "</kbd>";
+		}
+	</script>
+</body>
+</html>
+
